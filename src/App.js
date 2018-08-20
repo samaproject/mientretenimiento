@@ -3,6 +3,7 @@ import narutologo from './naruto.jpeg';
 import bblogo from './breakingbad.jpeg';
 import gladiadorlogo from './gladiador.jpg';
 import './App.css';
+import MediaForm from './MediaForm/MediaForm'
 
 import Media from './Media/Media';
 
@@ -38,6 +39,7 @@ class App extends Component {
         <div className="row">
           {medias}
         </div>
+        <MediaForm />
       </div>
     )
     
