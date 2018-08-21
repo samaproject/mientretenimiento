@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Media.css';
+
 class Media extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +21,7 @@ class Media extends Component {
         </div>
 
         <div className="card-body">
-          <img src={this.imagen} alt="img"/>
+          <img src={this.imagen} alt="img" height="125" width="25"/>
           <br/>
           {this.genero}
         </div>

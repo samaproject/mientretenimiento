@@ -36,10 +36,22 @@ class App extends Component {
     
     return (
       <div className="container">
-        <div className="row">
-          {medias}
+
+        <div className="appHeader">
+          <h1>Lista de contenidos</h1>
         </div>
-        <MediaForm />
+        
+        <div className="appBody">  
+          <MediaForm />
+          <div className="row">
+            {medias}
+          </div>
+        </div>
+
+        <div className="appFooter">
+          <p>SamaProject</p>
+        </div>
+      
       </div>
     )
     
