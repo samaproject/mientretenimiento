@@ -52,17 +52,16 @@ class MediaForm extends Component{
               
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                  <span className="input-group-text" id="basic-addon1">Título</span>
+                  <span className="input-group-text">Título</span>
                 </div>
-                <input className="form-control" aria-label="Titulo" aria-describedby="basic-addon1" type="text" name="titulo" value={this.state.titulo} onChange={this.handleInput}/>
+                <input className="form-control" aria-label="Titulo" type="text" name="titulo" value={this.state.titulo} onChange={this.handleInput}/>
               </div>
 
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                  <label className="input-group-text" for="inputGroupSelect01">Tipo</label>
+                  <label className="input-group-text">Tipo</label>
                 </div>
-                <select className="custom-select" name="tipo" value={this.state.tipo} onChange={this.handleInput} id="inputGroupSelect01">
-                  <option selected>Elegí...</option>
+                <select className="custom-select" name="tipo" value={this.state.tipo} onChange={this.handleInput}>
                   <option value="Pelicula">Película</option>
                   <option value="Serie">Serie</option>
                   <option value="Anime">Anime</option>
@@ -71,11 +70,11 @@ class MediaForm extends Component{
 
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                  <span className="input-group-text" id="inputGroupFileAddon01">Subir</span>
+                  <span className="input-group-text">Subir</span>
                 </div>
                 <div className="custom-file">
-                  <input className="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" type="file" value={this.state.imagen} onChange={this.handleInput}/>
-                  <label className="custom-file-label" for="inputGroupFile01">Elegir imágen</label>
+                  <input className="custom-file-input" name="imagen" type="file" value={this.state.imagen} onChange={this.handleInput}/>
+                  <label className="custom-file-label">Elegir imágen</label>
                 </div>
               </div>
 
