@@ -14,7 +14,8 @@ class App extends Component {
       medias: [
         {mediaId: 1, titulo: "Naruto", img: {narutologo}, genero: "Anime", puntuacion: 9},
         {mediaId: 2, titulo: "Gladiador", img: {gladiadorlogo}, genero: "Película", puntuacion: 7},
-        {mediaId: 3, titulo: "Breaking Bad", img: {bblogo}, genero: "Serie", puntuacion: 10}
+        {mediaId: 3, titulo: "Breaking Bad", img: {bblogo}, genero: "Serie", puntuacion: 10},
+        {mediaId: 4, titulo: "skjdlas", img:'', genero:"Serie", puntuacion: 2}
       ]
     };
   }
@@ -36,10 +37,22 @@ class App extends Component {
     
     return (
       <div className="container">
-        <MediaForm />
-        <div className="row">
-          {medias}
+
+        <div className="appHeader">
+          <h1>Lista de contenidos</h1>
         </div>
+        
+        <div className="appBody">  
+          <MediaForm />
+          <div className="row">
+            {medias}
+          </div>
+        </div>
+
+        <div className="appFooter">
+          <p>SamaProject</p>
+        </div>
+      
       </div>
     )
     
