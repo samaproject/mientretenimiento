@@ -5,3 +5,12 @@
     background: transparent;
     margin-left: 25%;
 }
+
+.mediaform button {
+    width: 250px;
+}
+
+#divBtnSubmit {
+    display: block;
+    text-align: center;
+}

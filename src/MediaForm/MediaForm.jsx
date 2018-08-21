@@ -78,7 +78,7 @@ class MediaForm extends Component{
                 </div>
               </div>
 
-              <div className="input-group mb-3">
+              <div id="divBtnSubmit" className="input-group mb-3">
                 <button className="btn btn-primary" type="submit" id="btnAceptar">Aceptar</button>
               </div>
     
