@@ -36,10 +36,10 @@ class App extends Component {
     
     return (
       <div className="container">
+        <MediaForm />
         <div className="row">
           {medias}
         </div>
-        <MediaForm />
       </div>
     )
     

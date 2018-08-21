@@ -23,7 +23,7 @@ class MediaForm extends Component{
 
     handleSubmit(e){
         e.preventDefault();
-        
+
     }
 
     render() {
@@ -31,17 +31,17 @@ class MediaForm extends Component{
             <div className="mediaform">
                 <h3>Ingrese su favorita</h3>
                 <form>
-                    <label>Título </label>
+                    <label>Título</label>
                     <input type="text" name="titulo" value={this.state.titulo} onChange={this.handleInput}/>
                     <br/>
-                    <label>Tipo </label>
+                    <label>Tipo</label>
                     <select name="tipo" value={this.state.tipo} onChange={this.handleInput}>
                         <option value="Película">Película</option>
                         <option value="Serie">Serie</option>
                         <option value="Anime">Animé</option>
                     </select>
                     <br/><br/>
-                    <label>Imagen </label>
+                    <label>Imagen</label>
                     <input name="imagen" type="file" value={this.state.imagen} onChange={this.handleInput}/>
                     <br/>
                     <button type="submit" id="btnAceptar">Aceptar</button>

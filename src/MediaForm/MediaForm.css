@@ -1,8 +1,9 @@
 .mediaform {
     border: 1px solid black;
-    width: 350px;
+    width: 400px;
     text-align: left;
     background-color: #fff;
+    padding: 20px;
 }
 
 input, button {
