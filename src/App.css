@@ -25,10 +25,3 @@ body {
   margin-top: 20px;
   font-family: 'Josefin Sans', sans-serif;
 }
-
-.appFooter {
-  bottom: 0;
-  position: fixed;
-  left: 0;
-  width: 100%;
-}
