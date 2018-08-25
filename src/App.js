@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import narutologo from './naruto.jpeg';
-import bblogo from './breakingbad.jpeg';
-import gladiadorlogo from './gladiador.jpg';
+
 import './App.css';
 import MediaForm from './MediaForm/MediaForm'
+
+import firebase from 'firebase';
 
 import Media from './Media/Media';
 
@@ -11,14 +11,30 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      medias: [
-        {mediaId: 1, titulo: "Naruto", img: {narutologo}, genero: "Anime", puntuacion: 9},
-        {mediaId: 2, titulo: "Gladiador", img: {gladiadorlogo}, genero: "Película", puntuacion: 7},
-        {mediaId: 3, titulo: "Breaking Bad", img: {bblogo}, genero: "Serie", puntuacion: 10},
-        {mediaId: 4, titulo: "skjdlas", img:'', genero:"Serie", puntuacion: 2},
-        {mediaId: 5, titulo: "skjdlaasfs", img:'', genero:"Serie", puntuacion: 3}
-      ]
+      medias: [ ]
     };
+    this.db = firebase.database().ref().child('medias');
+    this.imagesRef = firebase.storage().ref().child('images');
+    
+
+    this.handleAddMedia = this.handleAddMedia.bind(this);
+  }
+
+  componentDidMount() {
+    const { medias } = this.state;
+    this.db.on('child_added', snap => {
+      medias.push({
+        mediaId: snap.key,
+        titulo: snap.val().titulo,
+        imagen: snap.val().imagen,
+        genero: snap.val().genero,
+      })
+      this.setState({medias});
+    });
+  }
+
+  handleAddMedia(media) {
+    this.db.push().set({titulo: media.titulo, imagen: media.imagen, genero: media.genero});
   }
 
   render() {
@@ -27,9 +43,8 @@ class App extends Component {
         <div className="col-md-3" key={media.mediaId}>
           <Media 
             titulo={media.titulo}
-            imagen={media.img}
+            imagen={media.imagen}
             genero={media.genero}
-            puntaje={media.puntuacion}
           />
         </div>
       )
@@ -43,7 +58,7 @@ class App extends Component {
         </div>
         
         <div className="appBody">  
-          <MediaForm />
+          <MediaForm onAddMedia={this.handleAddMedia}/>
           <div className="row">
             {medias}
           </div>

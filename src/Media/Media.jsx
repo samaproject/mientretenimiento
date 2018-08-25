@@ -8,7 +8,9 @@ class Media extends Component {
     this.titulo = props.titulo;
     this.imagen = props.imagen;
     this.genero = props.genero;
-    this.puntaje = props.puntaje;
+    this.state = {
+      puntaje: 0
+    }
   }
 
   render() {
@@ -21,13 +23,13 @@ class Media extends Component {
         </div>
 
         <div className="card-body">
-          <img src={this.imagen} alt="img" height="125" width="25"/>
+          <img className="card-img-top" src={this.imagen} alt="img"/>
           <br/>
           {this.genero}
         </div>
 
         <div className="card-footer">
-          {this.puntaje}
+          {this.state.puntaje}
         </div>
 
       </div>

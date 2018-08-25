@@ -6,10 +6,11 @@ class MediaForm extends Component{
     super();
     this.state = {
       titulo: '',
-      tipo: '',
+      genero: '',
       imagen: '',
     };
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   };
 
   handleInput(e){
@@ -22,7 +23,7 @@ class MediaForm extends Component{
 
   handleSubmit(e){
     e.preventDefault();
-      
+    this.props.onAddMedia(this.state); 
   }
 
   render() {
@@ -32,7 +33,7 @@ class MediaForm extends Component{
         
           <div className="col-offset-5"> 
             
-            <form>
+            <form onSubmit={this.handleSubmit}>
               
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
@@ -43,9 +44,9 @@ class MediaForm extends Component{
 
               <div className="input-group mb-3">
                 <div className="input-group-prepend">
-                  <label className="input-group-text">Tipo</label>
+                  <label className="input-group-text">Genero</label>
                 </div>
-                <select className="custom-select" name="tipo" value={this.state.tipo} onChange={this.handleInput}>
+                <select className="custom-select" name="genero" value={this.state.genero} onChange={this.handleInput}>
                   <option value="Pelicula">Película</option>
                   <option value="Serie">Serie</option>
                   <option value="Anime">Anime</option>
